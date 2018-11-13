@@ -41,6 +41,7 @@ FROM procedures p
     AND peo.type_id = 3
 WHERE p.actualId IS NULL
 AND p.requestEndGiveDateTime BETWEEN SUBDATE(NOW(), INTERVAL 1 HOUR) AND NOW()
+AND peo.created_at BETWEEN SUBDATE(NOW(), INTERVAL 1 HOUR) AND NOW()
 ;'''
 
 error_text = 'Found %s new errors:'
